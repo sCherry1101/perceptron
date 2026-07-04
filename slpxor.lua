@@ -1,13 +1,12 @@
+-- NOTE: this file is experiment file since I am curious if XOR gate dataset works with the same code as my prev AND gate one so I have no prediction about the outcome 
+
 local dataset = {
-{inputs={0,0}, target=0},
-{inputs={0,1}, target=0},
-{inputs={1,0}, target=0},
-{inputs={1,1}, target=1}
+{ inputs = {0, 0}, target = 0 },
+{ inputs = {0, 1}, target = 1 },
+{ inputs = {1, 0}, target = 1 },
+{ inputs = {1, 1}, target = 0 }
 }
 
--- run ```lua slp.lua```
-
-print("NOTE: The next input will be weight 1-2 , bias and learning rate. Enter float values from 0-1 and if the value is not float value then the value will be 0.1 by default")
 
 print("-----------------------------------------------------------------")
 
@@ -64,3 +63,9 @@ local result = activate(z)
 
 print("input: " .. x1 .. ", " .. x2 .. " predicted: " .. result .. "  target: " .. dataset[i].target)
 end
+
+-- Okay after running the code I finally understood why a slp can't learn XOR thanks to geometry , 2 correct 2 incorrect outputs (which is not the code's fault actually) and my absurd curiosity. 
+
+-- The main reason why XOR doesnt work on single layer perceptron is because slp is linear and for XOR we need a non linear to seperate so the single layer perceptron is great for AND gate but for XOR we need smth non linear so the XOR gate converges (this is what my understanding for now is)
+
+-- So we will another perceptron that actually learns XOR so check out the XOR.lua :))
