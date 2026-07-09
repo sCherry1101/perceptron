@@ -49,3 +49,16 @@ print("input: (" ..x1 ..", " ..x2 ..") -> predicted: " ..output .." target: " ..
 end
 print("--------------------------------------------------")
 print("total errors: " .. total_error)
+
+-- the known XOR values as inputs which make 0 errors are 
+-- w11 = 1
+-- w12 = 1
+-- b1  = -0.5
+-- w21 = -1
+-- w22 = -1
+-- b2  = 1.5
+-- w31 = 1
+-- w32 = 1
+-- b3  = -1.5
+
+-- but feel free to try different values!
